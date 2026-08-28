@@ -202,7 +202,6 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 525;
   justify-content: center;
-  overflow: auto;
 }
 .data-row:hover {
   background: #eef2f6;
