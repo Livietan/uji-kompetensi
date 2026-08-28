@@ -6,6 +6,7 @@ var popup = document.getElementById("popup");
 var closeButton = document.getElementById("buttonClose");
 var addButton = document.getElementById("add-button");
 var select = document.getElementById("selected");
+var itemMenu = document.getElementById("item-menu");
 
 var nameItem = document.getElementById("nameItem");
 var amountItem = document.getElementById("amountItem");
@@ -57,6 +58,20 @@ async function stat() {
 
 stat();
 
+document.addEventListener("click", (event) => {
+  var ellipsis = event.target.closest(".ellipsis");
+  if (ellipsis) {
+    var position = ellipsis.getBoundingClientRect();
+    itemMenu.style.display = "flex";
+    itemMenu.style.left = `${position.right - itemMenu.offsetWidth}px`
+    itemMenu.style.top = `${position.bottom + 5}px`
+    return;
+  }
+  if (itemMenu.contains(event.target)) {
+    return;
+  }
+  itemMenu.style.display = "none";
+})
 if (newQuantity && closeButton) {
   newQuantity.addEventListener("click", () => {
     popup.style.display = "flex";
@@ -72,8 +87,8 @@ if (addButton) {
   });
 }
 document.addEventListener("DOMContentLoaded", () => {
-  read(select.value);
   if (select) {
+    read(select.value);
     select.addEventListener("change", () => {
       read(select.value);
     })

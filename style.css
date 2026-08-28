@@ -249,7 +249,7 @@ body {
 }
 .item-menu {
   position: fixed;
-  display: flex;
+  display: none;
   flex-direction: column;
   background: var(--edit-background);
   border: 1px solid #e5e7eb;
@@ -261,9 +261,6 @@ body {
     0 2px 5px rgba(0, 0, 0, 0.05);
   gap: 6px;
   z-index: 1000;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .item-menu span {
   font-family: "Inter", sans-serif;
