@@ -15,6 +15,7 @@ body {
   --text-color-navbar: #d6d6d6;
   --hover-background: #3a3a3a;
   --color-title-navbar: #e8e8e8;
+  --background-stat: #faf9f6;
 }
 .sidebar {
   width: 10vw;
@@ -67,11 +68,17 @@ body {
   flex-direction: column;
   width: 100%;
   padding: 2rem;
+  gap: 8px;
 }
 .stat {
   padding: 1rem 1rem;
   display: flex;
   gap: 26rem;
+  background: var(--background-stat);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
 }
 .card {
   display: flex;
