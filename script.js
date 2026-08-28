@@ -14,8 +14,8 @@ var category = document.getElementById("category");
 var price = document.getElementById("price");
 
 async function show() {
-  var response = await fetch("http://127.0.0.1:8000/show");
   if (dataItem) {
+    var response = await fetch("http://127.0.0.1:8000/show");
     var data = await response.json();
     data.forEach((item, index) => {
       var data = document.createElement("div");
