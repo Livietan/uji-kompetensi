@@ -50,7 +50,7 @@ async function stat() {
     var response = await fetch("http://127.0.0.1:8000/stat")
     var item = await response.json();
     defaultItem.innerHTML = item.amount;
-    defaultValue.innerHTML = `$${item.value}`;
+    defaultValue.innerHTML = `$${Number(item.value).toLocaleString("id-ID")}`;
   }
 }
 
