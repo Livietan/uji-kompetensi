@@ -127,12 +127,11 @@ body {
   margin: 0 0 0 auto;
   display: flex;
   align-items: center;
-  border: 1px solid #d1d5db;
   border-radius: 10px;
   padding: 4px;
   user-select: none;
   cursor: pointer;
-  background: #f8fafc;
+  background: var(--background-stat);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 .quantity:hover {
