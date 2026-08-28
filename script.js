@@ -5,7 +5,7 @@ var newQuantity = document.getElementById("quantity");
 var popup = document.getElementById("popup");
 var closeButton = document.getElementById("buttonClose");
 var addButton = document.getElementById("add-button");
-var select = document.getElementById("xv1");
+var select = document.getElementById("selected");
 
 var nameItem = document.getElementById("nameItem");
 var amountItem = document.getElementById("amountItem");
@@ -33,10 +33,9 @@ async function show() {
   }
 }
 
-
-function add() {
+async function add() {
   if (nameItem && amountItem && type && category && price) {
-    var response = fetch(
+    var response = await fetch(
       `http://127.0.0.1:8000/ADD?name=${nameItem.value}&amount=${amountItem.value}&type=${type.value}&category=${category.value}&price=${price.value}`,
     );
     return response;
