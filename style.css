@@ -187,15 +187,16 @@ body {
     0 1px 3px rgba(0, 0, 0, 0.04);
   border-radius: 12px;
   height: 100vh;
+  overflow: auto;
 }
 .data-row {
   padding: 10px;
   display: grid;
   grid-template-columns:
     minmax(50px, 0.5fr)
-    minmax(180px, 3.5fr)
-    minmax(100px, 1.8fr)
-    minmax(80px, 1fr)
+    minmax(180px, 3.8fr)
+    minmax(100px, 1.9fr)
+    minmax(80px, 1.1fr)
     minmax(100px, 1.5fr)
     40px;
   align-items: center;
