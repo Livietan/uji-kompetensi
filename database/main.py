@@ -31,11 +31,15 @@ async def add(name:str, type:str, category:str, amount:int, price:int):
 
 
 @app.get("/read")
-async def main():
+async def main(value):
     connect = sqlite3.connect("inventory.db")
     cursor = connect.cursor()
 
-    cursor.execute("SELECT name, type, amount, price FROM items")
+    if value == "New" or "Used":
+        cursor.execute(f"SELECT name, type, amount, price FROM items WHERE type='{value}'")
+
+    if value == "*":
+        cursor.execute(f"SELECT name, type, amount, price FROM items")
 
     data = cursor.fetchall()
 

@@ -13,9 +13,10 @@ var type = document.getElementById("type");
 var category = document.getElementById("category");
 var price = document.getElementById("price");
 
-async function read() {
+async function read(value) {
   if (dataItem) {
-    var response = await fetch("http://127.0.0.1:8000/read");
+    dataItem.innerHTML = "";
+    var response = await fetch(`http://127.0.0.1:8000/read?value=${value}`);
     var data = await response.json();
     data.forEach((item, index) => {
       var data = document.createElement("div");
@@ -55,7 +56,6 @@ async function stat() {
 }
 
 stat();
-read();
 
 if (newQuantity && closeButton) {
   newQuantity.addEventListener("click", () => {
@@ -71,6 +71,14 @@ if (addButton) {
     location.reload();
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  read(select.value);
+  if (select) {
+    select.addEventListener("change", () => {
+      read(select.value);
+    })
+  }
+})
 dashboard_link.addEventListener("click", () => {
   window.location.href = "dashboard.html";
 });
