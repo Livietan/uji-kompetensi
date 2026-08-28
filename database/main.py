@@ -12,7 +12,7 @@ app.add_middleware(
 )
 
 @app.get("/update")
-def add(name:str, type:str, category:str, amount:int, price:int):
+async def add(name:str, type:str, category:str, amount:int, price:int):
     connect = sqlite3.connect("inventory.db")
     cursor = connect.cursor()
 
@@ -31,7 +31,7 @@ def add(name:str, type:str, category:str, amount:int, price:int):
 
 
 @app.get("/read")
-def main():
+async def main():
     connect = sqlite3.connect("inventory.db")
     cursor = connect.cursor()
 
@@ -41,4 +41,12 @@ def main():
 
     return data
 
+@app.get("/stat")
+async def main():
+    connect = sqlite3.connect("inventory.db")
+    cursor = connect.cursor()
 
+    cursor.execute("SELECT SUM(amount), SUM(price) FROM items")
+    result = cursor.fetchone()
+
+    return {"amount":result[0], "value": result[1]}
