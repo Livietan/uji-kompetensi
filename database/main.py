@@ -35,7 +35,7 @@ async def main():
     connect = sqlite3.connect("inventory.db")
     cursor = connect.cursor()
 
-    cursor.execute("SELECT id, name, type, amount, category , price FROM items")
+    cursor.execute("SELECT name, type, amount, price FROM items")
 
     data = cursor.fetchall()
 
