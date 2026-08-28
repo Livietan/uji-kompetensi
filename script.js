@@ -83,5 +83,5 @@ dashboard_link.addEventListener("click", () => {
   window.location.href = "dashboard.html";
 });
 movement_link.addEventListener("click", () => {
-  window.location.href = "movement.html";
+  window.location.href = "item.html";
 });
