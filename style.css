@@ -16,7 +16,7 @@ body {
   --hover-background: #3a3a3a;
   --color-title-navbar: #e8e8e8;
 }
-.navbar {
+.sidebar {
   width: 10vw;
   height: 100vh;
   background: var(--navbar-background);
@@ -27,7 +27,7 @@ body {
   gap: 2rem;
   user-select: none;
 }
-.title-navbar {
+.title-sidebar {
   font-family: "Inter", sans-serif;
   font-size: 38px;
   font-weight: 600;
@@ -48,7 +48,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.menu-navbar {
+.menu-sidebar {
   font-size: 28px;
   padding: 5px 1rem 5px 5px;
   color: var(--text-color-navbar);
