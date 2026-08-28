@@ -13,7 +13,7 @@ var type = document.getElementById("type");
 var category = document.getElementById("category");
 var price = document.getElementById("price");
 
-async function show() {
+async function read() {
   if (dataItem) {
     var response = await fetch("http://127.0.0.1:8000/read");
     var data = await response.json();
@@ -33,7 +33,7 @@ async function show() {
   }
 }
 
-async function add() {
+async function update() {
   if (nameItem && amountItem && type && category && price) {
     var response = await fetch(
       `http://127.0.0.1:8000/update?name=${nameItem.value}&amount=${amountItem.value}&type=${type.value}&category=${category.value}&price=${price.value}`,
@@ -42,7 +42,7 @@ async function add() {
   }
 }
 
-show();
+read();
 
 if (newQuantity && closeButton) {
   newQuantity.addEventListener("click", () => {
@@ -54,7 +54,7 @@ if (newQuantity && closeButton) {
 }
 if (addButton) {
   addButton.addEventListener("click", async () => {
-    await add();
+    await update();
     location.reload();
   });
 }
