@@ -15,7 +15,7 @@ var price = document.getElementById("price");
 
 async function show() {
   if (dataItem) {
-    var response = await fetch("http://127.0.0.1:8000/show");
+    var response = await fetch("http://127.0.0.1:8000/read");
     var data = await response.json();
     data.forEach((item, index) => {
       var data = document.createElement("div");
@@ -26,7 +26,7 @@ async function show() {
       <span>${item[2]}</span>
       <span>${item[3]}</span>
       <span>$${item[5]}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>`;
+      <svg class="elipsis" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>`;
 
       dataItem.appendChild(data);
     });
@@ -36,7 +36,7 @@ async function show() {
 async function add() {
   if (nameItem && amountItem && type && category && price) {
     var response = await fetch(
-      `http://127.0.0.1:8000/ADD?name=${nameItem.value}&amount=${amountItem.value}&type=${type.value}&category=${category.value}&price=${price.value}`,
+      `http://127.0.0.1:8000/update?name=${nameItem.value}&amount=${amountItem.value}&type=${type.value}&category=${category.value}&price=${price.value}`,
     );
     return response;
   }

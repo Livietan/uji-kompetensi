@@ -11,7 +11,7 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-@app.get("/ADD")
+@app.get("/update")
 def add(name:str, type:str, category:str, amount:int, price:int):
     connect = sqlite3.connect("inventory.db")
     cursor = connect.cursor()
@@ -30,7 +30,7 @@ def add(name:str, type:str, category:str, amount:int, price:int):
     connect.close()
 
 
-@app.get("/show")
+@app.get("/read")
 def main():
     connect = sqlite3.connect("inventory.db")
     cursor = connect.cursor()
