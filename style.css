@@ -159,7 +159,12 @@ body {
 }
 .inventory-table {
   display: grid;
-  grid-template-columns: 5rem 1fr 19rem 20rem 21rem;
+  grid-template-columns:
+    minmax(50px, 0.5fr)
+    minmax(180px, 3fr)
+    minmax(100px, 1.5fr)
+    minmax(80px, 1fr)
+    minmax(100px, 1.5fr);
   align-items: center;
 
   padding: 1rem 1rem 0.7rem 1rem;
