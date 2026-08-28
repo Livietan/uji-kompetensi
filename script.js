@@ -17,11 +17,11 @@ async function show() {
   var response = await fetch("http://127.0.0.1:8000/show");
   if (dataItem) {
     var data = await response.json();
-    data.forEach((item) => {
+    data.forEach((item, index) => {
       var data = document.createElement("div");
       data.classList.add("data-row");
       data.innerHTML = `
-      <span>${item[0]}</span>
+      <span>${index + 1}</span>
       <span>${item[1]}</span>
       <span>${item[2]}</span>
       <span>${item[3]}</span>

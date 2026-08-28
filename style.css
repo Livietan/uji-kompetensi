@@ -191,15 +191,21 @@ body {
 .data-row {
   padding: 10px;
   display: grid;
-  grid-template-columns: 5rem 2fr 1.15fr 1fr 1fr 2rem;
+  grid-template-columns:
+    minmax(50px, 0.5fr)
+    minmax(180px, 3.5fr)
+    minmax(100px, 1.8fr)
+    minmax(80px, 1fr)
+    minmax(100px, 1.5fr)
+    40px;
   align-items: center;
   font-family: "Inter", sans-serif;
   font-weight: 525;
   justify-content: center;
+  overflow: auto;
 }
 .data-row:hover {
   background: #eef2f6;
-  border-radius: 10px;
 }
 .head-form {
   display: flex;
