@@ -1,6 +1,6 @@
 var dashboard_link = document.getElementById("dashboard-button");
 var movement_link = document.getElementById("movement-button");
-var dataItem = document.getElementById("data-item");
+var dataItem = document.getElementById("inventory-item");
 var newQuantity = document.getElementById("quantity");
 var popup = document.getElementById("popup");
 var closeButton = document.getElementById("buttonClose");

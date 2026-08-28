@@ -78,7 +78,7 @@ body {
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.06),
     0 1px 3px rgba(0, 0, 0, 0.04);
-    border-radius: 12px;
+  border-radius: 12px;
 }
 .card {
   display: flex;
@@ -157,7 +157,7 @@ body {
   flex-direction: column;
   gap: 14px;
 }
-.item {
+.inventory-table {
   display: grid;
   grid-template-columns: 5rem 1fr 19rem 20rem 21rem;
   align-items: center;
@@ -167,11 +167,22 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 550;
   font-size: 16px;
+  background: var(--background-stat);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
 }
-.data-item {
+.inventory-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background: var(--background-stat);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  height: 100vh;
 }
 .data-row {
   padding: 10px;
